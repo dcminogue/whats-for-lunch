@@ -13,9 +13,31 @@
  * in minutes.
  */
 
-const whatToDoForLunch = function(hungry, availableTime) {
-  console.log("I don't know what to do!");
-}
+// const whatToDoForLunch = function(hungry, availableTime) {
+//   if (!hungry) return "Get back to work"; 
+//    if (availableTime <= 0) return "Invalid time input";
+//     if (availableTime < 20) return "Pick something up and eat it in the lab.";
+//      if (availableTime > 30) return "We need to focus here.";
+//      return "Try a place nearby."; 
+// }  
+
+const whatToDoForLunch = (hungry, availableTime) => {
+  if (!hungry) {
+    console.log("Get back to work.");
+    return;
+  } if (availableTime <= 0) {
+    console.log("Invalid time input");
+  return;
+ } if (availableTime > 30) {
+  console.log("We have to stay focused.");
+  return;
+ } if (availableTime < 20) {
+  console.log("Eat in the lab.");
+  return;
+ } console.log("Try a place nearby.");
+    return;
+};
+
 
 
 /*
@@ -25,15 +47,18 @@ const whatToDoForLunch = function(hungry, availableTime) {
 
 console.log("I'm hungry and I have 20 minutes for lunch.");
 whatToDoForLunch(true, 20);
-console.log("---");
+
 
 console.log("I'm hungry and I have 50 minutes for lunch.");
 whatToDoForLunch(true, 50);
-console.log("---");
+
 
 console.log("I'm not hungry and I have 30 minutes for lunch.");
 whatToDoForLunch(false, 30);
-console.log("---");
+
 
 console.log("I'm hungry and I have 15 minutes for lunch.");
 whatToDoForLunch(true, 15);
+
+console.log("I'm hungry and I have -5 minutes for lunch.");
+whatToDoForLunch(true, -5);
